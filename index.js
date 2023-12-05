@@ -3,6 +3,7 @@ const read = document.querySelector(".desc");
 const readMore = document.getElementById("read_more");
 const menu = document.getElementById("menu");
 const ul = document.querySelector(".nav_list");
+const body = document.querySelector("body");
 
 lists.forEach((list) => {
   list.addEventListener("click", () => {
@@ -19,5 +20,5 @@ readMore.addEventListener("click", () => {
 });
 
 menu.addEventListener("click", () => {
-  ul.classList.toggle("show");
+  body.classList.toggle("show");
 });

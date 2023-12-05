@@ -14,12 +14,13 @@
 }
 section {
   width: 100%;
-  min-height: 100vh;
   padding: 4rem 10%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
 .button {
   width: 120px;
@@ -61,7 +62,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 10%;
+  padding: 1.5rem 10%;
   z-index: 5;
   backdrop-filter: blur(10px);
   transition: all 0.3s;
@@ -107,23 +108,18 @@ section {
 .header .menu_toggle {
   width: 40px;
   height: 40px;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  padding: 10px 5px;
+  display: none;
 }
 .header .menu_toggle span {
   width: 100%;
   height: 3px;
   background-color: #fff;
   margin-bottom: 6px;
+  display: block;
 }
 .header .menu_toggle span:last-child {
   margin-bottom: 0;
-}
-.header .menu_toggle {
-  display: none;
 }
 /*---------- Home section -------------*/
 .home {
@@ -131,18 +127,21 @@ section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: calc(100vh-60px);
+  height: 100vh;
 }
 .home_container {
+  max-width: 1300px;
   width: 100%;
   position: relative;
   display: flex;
-  align-items: center;
-  color: #ffffff;
-  gap: 4rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  margin: auto;
 }
 .home-detail {
-  width: 60%;
+  width: 50%;
+  color: #fff;
 }
 .home-detail h1 {
   font-size: 4rem;
@@ -178,23 +177,26 @@ section {
 .home-image img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   animation-name: slideRight;
   animation-duration: 1s;
 }
 
 /*about*/
-section.about div.about-widget {
+.about .about-widget {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(30px);
   border-radius: 0px 45px 0px 45px;
-  padding: 1.5rem;
-  max-width: 80%;
+  padding: 2rem 5%;
+  max-width: 1300px;
   background-color: darkslateblue;
   text-align: center;
 }
 .about-detail {
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -210,23 +212,33 @@ mark {
   padding: 0px 5px;
   text-transform: capitalize;
 }
-section.about img {
-  clip-path: circle();
+.about .about_image {
   width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #fff;
   transition: 0.5s ease-in-out;
-  margin-bottom: 30px;
+  overflow: hidden;
 }
-section.about img:hover {
+.about .about_image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.about .about_image:hover {
   transform: scale(1.1);
 }
-section.about .about-detail h3 {
+.about .about-detail h3 {
   font-size: 2rem;
 }
-section.about .about-detail h2 {
+.about .about-detail h2 {
   font-size: 3rem;
   margin-block: 0.5rem;
 }
-section.about .about-detail p {
+.about .about-detail p {
   font-weight: 800;
   margin-top: 1rem;
   text-align: left;
@@ -264,12 +276,12 @@ section.about div.about-detail div.social-media a:hover i {
 }
 /*-----------------------------services Section-------------------*/
 
-.services div.container {
-  max-width: 100%;
+.services .container {
   height: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  padding: 2rem 5%;
 }
 .services .container .container-detail {
   text-align: center;
@@ -279,7 +291,7 @@ section.about div.about-detail div.social-media a:hover i {
   overflow: hidden;
 }
 .services div.container div.container-detail:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   box-shadow: 0px 0px 15px darkslateblue;
 }
 .services div.container div.container-detail img {
@@ -358,19 +370,25 @@ section.about div.about-detail div.social-media a:hover i {
   background-position: center;
   text-align: center;
 }
-.contact .contact_details {
-  width: 80%;
+.contact .contact_container {
+  max-width: 1300px;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
-  flex-wrap: wrap-reverse;
-  margin-bottom: 30px;
-  margin-top: -20px;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem 2%;
+}
+.contact .contact_details {
+  width: 40%;
+  display: block;
+  padding: 1rem;
 }
 .contact .contact_details .detail {
   padding: 10px;
   display: flex;
   align-items: center;
+  margin-bottom: 2rem;
 }
 .contact .contact_details .detail i {
   font-size: 50px;
@@ -496,53 +514,24 @@ form input[type="submit"]:active {
   transform: scale(0.99);
 }
 @media (max-width: 1200px) {
-  section {
-    padding: 1rem 5%;
-  }
   .all-heading {
     font-size: 2rem;
   }
-  .header {
-    padding: 2rem 5%;
-  }
   .header .logo {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   .header .list a {
     font-size: 1rem;
   }
-  .home .home_container {
-    flex-direction: column-reverse;
-    padding-top: 10%;
+  about .about-detail h3 {
+    font-size: 1rem;
   }
-  .home .home_container .home-detail {
-    width: 100%;
-    text-align: center;
+  .about .about-detail h2 {
+    font-size: 2.5rem;
   }
-  .home_container .home-image {
-    width: 80%;
-  }
-  section.about div.about-widget {
-    flex-direction: column;
-  }
-  section.about .about-detail {
-    align-items: center;
-  }
-  section.about .about-detail h3 {
-    font-size: 1.5rem;
-  }
-  section.about .about-detail h2 {
-    font-size: 2rem;
-  }
-  section.about .about-detail p {
+  .about .about-detail p {
     font-weight: 400;
     text-align: center;
-  }
-  .contact .contact_details {
-    flex-direction: column;
-  }
-  .contact .contact_details .detail {
-    flex-direction: column;
   }
   form {
     width: 300px;
@@ -551,29 +540,15 @@ form input[type="submit"]:active {
 
 @media (max-width: 900px) {
   section {
-    padding: 1rem 2%;
+    padding: 2rem 5%;
   }
-  .home-detail h1 {
-    font-size: 3rem;
-    font-weight: 500;
+  .header {
+    padding: 1rem 5%;
   }
-  .home-detail h1 span {
-    font-size: 3rem;
-    font-weight: 700;
-  }
-  .home-detail h2 {
-    font-size: 2.5rem;
-    font-weight: 500;
-  }
-  section.about img {
-    width: 200px;
-  }
-}
-@media (max-width: 750px) {
   .header .nav_list {
     position: fixed;
     top: 60px;
-    left: -100%;
+    left: 100%;
     width: 100%;
     display: block;
     background-color: rgba(222, 222, 222, 0.8);
@@ -586,8 +561,8 @@ form input[type="submit"]:active {
     text-align: center;
     padding: 10px 0px;
   }
-  .nav_list .show {
-    left: 0%;
+  .show .nav_list {
+    left: 0;
   }
   .header .list a {
     font-size: 20px;
@@ -599,7 +574,59 @@ form input[type="submit"]:active {
     background-color: blue;
   }
   .header .menu_toggle {
-    display: inline-flex;
+    display: block;
     cursor: pointer;
+  }
+  .home_container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+  .home-detail {
+    width: 100%;
+  }
+  .home_container .home-image {
+    width: 100%;
+  }
+  .about .about-widget {
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 7%;
+    gap: 1rem;
+  }
+  .about .about_image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+  }
+  .about .about-widget .about-detail {
+    align-items: center;
+    width: 100%;
+  }
+  .about .about-detail p {
+    text-align: center;
+  }
+  .contact .contact_container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1rem;
+  }
+  .contact .contact_details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding-bottom: 1rem;
+  }
+  .contact .contact_details .detail {
+    margin-bottom: 1rem;
+  }
+  form {
+    width: 100%;
+  }
+}
+@media (max-width: 750px) {
+  .home_container {
+    width: 100%;
   }
 }
