@@ -280,7 +280,7 @@ section.about div.about-detail div.social-media a:hover i {
 .services .container {
   height: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   padding: 2rem 5%;
 }
@@ -514,9 +514,12 @@ form input[type="submit"]:hover {
 form input[type="submit"]:active {
   transform: scale(0.99);
 }
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
+  section {
+    padding: 2rem 3%;
+  }
   .all-heading {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .header .logo {
     font-size: 1.2rem;
@@ -534,20 +537,9 @@ form input[type="submit"]:active {
     font-weight: 400;
     text-align: center;
   }
-  form {
-    width: 300px;
-  }
-}
 
-@media (max-width: 900px) {
-  section {
-    padding: 2rem 3%;
-  }
-  .home {
-    padding-top: 100px;
-  }
   .header {
-    padding: 2rem 5%;
+    padding: 2rem 7%;
   }
   .header .nav_list {
     position: fixed;
@@ -581,10 +573,14 @@ form input[type="submit"]:active {
     display: block;
     cursor: pointer;
   }
+  .home {
+    padding: 2rem 0%;
+  }
   .home_container {
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
+    margin-top: 45px;
   }
   .home-detail {
     width: 100%;
@@ -595,7 +591,6 @@ form input[type="submit"]:active {
   .about .about-widget {
     justify-content: center;
     width: 100%;
-    padding: 2rem 7%;
     gap: 1rem;
   }
   .about .about_image {
@@ -613,19 +608,36 @@ form input[type="submit"]:active {
   .contact .contact_container {
     flex-direction: column-reverse;
     text-align: center;
-    gap: 1rem;
+    gap: 0.5rem;
   }
   .contact .contact_details {
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column-reverse;
-    padding-bottom: 1rem;
   }
-  .contact .contact_details .detail {
-    margin-bottom: 1rem;
+}
+@media (max-width: 600px) {
+  .home .home_container .home-detail h1 {
+    font-size: 3rem;
+  }
+  .home-detail h1 span {
+    font-size: 3rem;
+  }
+  .home-detail h2 {
+    font-size: 2.5rem;
+  }
+  .home-detail p {
+    padding: 1rem;
+    height: auto;
+  }
+  .home-detail button {
+    display: none;
   }
   form {
-    width: 100%;
+    width: 300px;
+  }
+  .contact .contact_details .detail {
+    margin-bottom: 0.5rem;
   }
 }
